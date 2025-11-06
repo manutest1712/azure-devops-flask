@@ -16,4 +16,4 @@ create-app:
 	az webapp create --resource-group $(RG) --plan $(PLAN) --name $(APP) --runtime "PYTHON:$(PYTHON_VERSION)"
 	az webapp config set --resource-group $(RG) --name $(APP) --startup-file "python app.py"
 app-run:
-	az webapp up --name $(APP) --resource-group $(RG) --runtime "PYTHON:$(PYTHON_VERSION)" --sku B1 --startup-command "python app.py"
+	az webapp up --name $(APP) --resource-group $(RG) --runtime "PYTHON:$(PYTHON_VERSION)"
