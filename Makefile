@@ -17,3 +17,13 @@ create-app:
 	az webapp config set --resource-group $(RG) --name $(APP) --startup-file "python app.py"
 app-run:
 	az webapp up --name $(APP) --resource-group $(RG) --runtime "PYTHON:$(PYTHON_VERSION)"
+app-run:
+	@echo "Checking if webapp exists..."
+	@az webapp show --name helloflask --resource-group $(RG) >/dev/null 2>&1 && \
+		echo "Deleting existing webapp helloflask..." && \
+		az webapp delete --name helloflask --resource-group $(RG) || \
+		echo "No existing app found."
+
+	@echo "Setting Flask startup file and deploying..."
+	export FLASK_APP=app.py
+	az webapp up --resource-group $(RG) --sku F1 -n helloflask
