@@ -1,12 +1,25 @@
 # Flask Hello World
 
-This is a simple Flask application that shows 'Hello, World!' in the browser.
+Minimal Flask application that returns "Hello, World!" at `/` and a JSON healthcheck at `/health`.
 
-## Run
 
-```bash
+## Requirements
+- Python 3.8+ (3.12 works fine)
+- make
+
+
+## Quick start (Unix/macOS)
+
+# clone the repo
+git clone <your-repo-url>
+cd azure-devops-flask
+
+
+# Install necessary dependencies
 make install
-python app.py
-```
 
-Then open http://localhost:5000
+
+# run the app (development)
+make run
+
+# open http://127.0.0.1:5000 in your browser
