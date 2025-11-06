@@ -1,5 +1,5 @@
 install:
-	pip install -r requirements.txt
+	pip install --user -r requirements.txt
 lint:
 	echo "to be done"
 test:
