@@ -29,7 +29,7 @@ HELLO_HTML = """
 <body>
     <div class="card">
         <h1>Hello, World!</h1>
-        <p>This is a minimal Flask app served from <code>app.py</code>.</p>
+        <p>This is a minimal Flask app developed by Manu served from <code>app.py</code>.</p>
     </div>
 </body>
 </html>
