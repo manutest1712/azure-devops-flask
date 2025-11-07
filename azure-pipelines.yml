@@ -8,13 +8,13 @@ trigger:
 
 pool: myAgentPool
   
-steps:
-- script: |
-    echo Hello, world!
-    echo I am Manu
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+- stage: BuildStage
+  jobs:
+    - job: BuildJob
+      pool: myAgentPool
+      steps:
+        - script: |
+            echo Building...
+            pip install --user -r requirements.txt
+            displayName: 'Setting up the build process' 
