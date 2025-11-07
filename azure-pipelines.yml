@@ -9,7 +9,9 @@ trigger:
 pool: myAgentPool
   
 steps:
-- script: echo Hello, world!
+- script: |
+    echo Hello, world!
+    echo I am Manu
   displayName: 'Run a one-line script'
 
 - script: |
