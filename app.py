@@ -1,47 +1,50 @@
-from flask import Flask, render_template_string, jsonify
+from flask import Flask, request, jsonify
+from flask.logging import create_logger
+import logging
+
+import pandas as pd
+# from sklearn.externals import joblib
+import joblib
+from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
+LOG = create_logger(app)
+LOG.setLevel(logging.INFO)
 
-HELLO_HTML = """
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello</title>
-    <style>
-        body {
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-            padding: 2rem;
-        }
-        .card {
-            max-width: 640px;
-            margin: 2rem auto;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-        }
-        h1 {
-            margin: 0 0 0.5rem 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <h1>Hello, World!</h1>
-        <p>This is a minimal Flask app developed by Manu served from <code>app.py</code>.</p>
-    </div>
-</body>
-</html>
-"""
+def scale(payload):
+    """Scales Payload"""
 
-@app.route('/')
-def hello():
-    return render_template_string(HELLO_HTML)
+    LOG.info("Scaling Payload: %s payload")
+    scaler = StandardScaler().fit(payload)
+    scaled_adhoc_predict = scaler.transform(payload)
+    return scaled_adhoc_predict
 
-@app.route("/health")
-def health():
-    return jsonify(status="ok")
+@app.route("/")
+def home():
+    html = "<h3>Sklearn Prediction Home</h3>"
+    return html.format(format)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+# TO DO:  Log out the prediction value
+@app.route("/predict", methods=['POST'])
+def predict():
+    # Performs an sklearn prediction
+
+    try:
+        # Load pretrained model as clf. Try any one model. 
+        # clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
+        # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
+        clf = joblib.load("./Housing_price_model/GradientBoostingRegressor.joblib")
+    except:
+        LOG.info("JSON payload: %s json_payload")
+        return "Model not loaded"
+
+    json_payload = request.json
+    LOG.info("JSON payload: %s json_payload")
+    inference_payload = pd.DataFrame(json_payload)
+    LOG.info("inference payload DataFrame: %s inference_payload")
+    scaled_payload = scale(inference_payload)
+    prediction = list(clf.predict(scaled_payload))
+    return jsonify({'prediction': prediction})
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000, debug=True)
