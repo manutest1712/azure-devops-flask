@@ -20,4 +20,17 @@ stages:
             source venv/bin/activate
             pip install --upgrade pip setuptools wheel
             pip install -r requirements.txt
+          workingDirectory: $(projectRoot)
           displayName: 'Setting up the build process' 
+        - task: ArchiveFiles@2
+          displayName: 'myStep 4 - Archive files'
+          inputs:
+            rootFolderOrFile: '$(projectRoot)'
+            includeRootFolder: false
+            archiveType: zip
+            archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+            replaceExistingArchive: true
+
+        - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+          displayName: 'myStep 5 - Upload package'
+          artifact: drop
