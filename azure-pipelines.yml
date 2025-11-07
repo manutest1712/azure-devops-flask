@@ -12,7 +12,7 @@ variables:
   projectRoot: $(System.DefaultWorkingDirectory)
   environmentName: "production"
   azureServiceConnectionId: 'DemoConnection'
-  webAppName: 'flaskwebapp'
+  webAppName: 'flaskwebapp123456'
   
 stages:
 - stage: BuildStage
