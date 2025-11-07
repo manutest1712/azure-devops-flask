@@ -17,4 +17,4 @@ stages:
         - script: |
             echo Building...
             pip install --user -r requirements.txt
-        displayName: 'Setting up the build process' 
+          displayName: 'Setting up the build process' 
