@@ -7,6 +7,9 @@ trigger:
 - main
 
 pool: myAgentPool
+
+variables:
+  projectRoot: $(System.DefaultWorkingDirectory)
   
 stages:
 - stage: BuildStage
