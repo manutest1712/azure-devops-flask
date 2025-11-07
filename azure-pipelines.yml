@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: devops pool
+pool: myAgentPool
   
 steps:
 - script: echo Hello, world!
