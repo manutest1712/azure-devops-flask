@@ -42,9 +42,12 @@ def predict():
         # clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
         # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
         clf = joblib.load("./Housing_price_model/GradientBoostingRegressor.joblib")
-    except Exception as e :
-        LOG.error("Model not loaded. Error: %s", e)
-        return jsonify({"error": "Model not loaded"}), 500
+    except FileNotFoundError:
+        LOG.error("Model file not found")
+        return jsonify({"error": "Model file not found"}), 500
+    except (ImportError, AttributeError) as e:
+        LOG.error("Model load failed: %s", e)
+        return jsonify({"error": "Model load failed"}), 500
 
     json_payload = request.json
     LOG.info("JSON payload: %s json_payload")
@@ -56,7 +59,7 @@ def predict():
         return jsonify({'prediction': prediction})
     except Exception as ex:
         LOG.error("Error processing prediction: %s", ex)
-        return jsonify({"error": "Prediction failed"}), 500   
+        return jsonify({"error": "Prediction failed"}), 500 
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
