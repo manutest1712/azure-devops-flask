@@ -23,3 +23,6 @@ make install
 make run
 
 # open http://127.0.0.1:5000 in your browser
+
+
+![App UI](docs/Azure_Cloud_Shell_Make_All_Pass.png)
