@@ -9,7 +9,8 @@ lint:
 	echo "linting main python file"
 	pylint app.py
 test:
-	echo "to be done"
+	echo "sample test with example file"
+	python -m pytest -vv test_hello.py
 create-plan:
 	az appservice plan create --name $(PLAN) --resource-group $(RG) --sku B1 --is-linux
 
