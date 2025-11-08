@@ -58,12 +58,12 @@ def predict():
         scaled_payload = scale(inference_payload)
         prediction = list(clf.predict(scaled_payload))
         return jsonify({'prediction': prediction})
-    except (ValueError, TypeError, KeyError) as e:
-        LOG.error("Invalid input payload: %s", e)
-        return jsonify({"error": "Invalid input payload"}), 400
     except NotFittedError:
         LOG.error("Model is not fitted")
         return jsonify({"error": "Model is not fitted"}), 500
+    except (ValueError, TypeError, KeyError) as e:
+        LOG.error("Invalid input payload: %s", e)
+        return jsonify({"error": "Invalid input payload"}), 400
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
