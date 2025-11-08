@@ -1,3 +1,7 @@
+"""
+Flask app for predicting house prices using a pretrained sklearn model.
+"""
+
 import logging
 
 from flask import Flask, request, jsonify
