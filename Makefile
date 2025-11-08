@@ -6,7 +6,8 @@ PYTHON_VERSION=3.10
 install:
 	pip install --user -r requirements.txt
 lint:
-	echo "to be done"
+	echo "linting main python file"
+	pylint app.py
 test:
 	echo "to be done"
 create-plan:
