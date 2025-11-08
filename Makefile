@@ -28,3 +28,6 @@ app-run:
 	@echo "Setting Flask startup file and deploying..."
 	export FLASK_APP=app.py
 	az webapp up --resource-group $(RG) --sku F1 -n flaskwebapp123456
+web-app-run-post:
+	chmod +x make_predict_azure_app.sh
+	./make_predict_azure_app.sh
