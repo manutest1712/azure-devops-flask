@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-PORT=443
-echo "Port: $PORT"
-
 # POST method predict
 curl -d '{
    "CHAS":{
@@ -25,5 +22,5 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-     -X POST http://flaskwebapp123456.azurewebsites.net/predict 
+     -X POST https://flaskwebapp123456.azurewebsites.net/predict 
      #your application name <yourappname>goes here
