@@ -11,6 +11,7 @@ from flask.logging import create_logger
 import pandas as pd
 # from sklearn.externals import joblib
 import joblib
+from sklearn.exceptions import NotFittedError
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
@@ -57,9 +58,12 @@ def predict():
         scaled_payload = scale(inference_payload)
         prediction = list(clf.predict(scaled_payload))
         return jsonify({'prediction': prediction})
-    except Exception as ex:
-        LOG.error("Error processing prediction: %s", ex)
-        return jsonify({"error": "Prediction failed"}), 500 
+    except (ValueError, TypeError, KeyError) as e:
+        LOG.error("Invalid input payload: %s", e)
+        return jsonify({"error": "Invalid input payload"}), 400
+    except NotFittedError:
+        LOG.error("Model is not fitted")
+        return jsonify({"error": "Model is not fitted"}), 500
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
