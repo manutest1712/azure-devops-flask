@@ -1,6 +1,12 @@
 # Overview
 
-<TODO: complete this with an overview of your project>
+This project provides a Flask web application that exposes a machine-learning model as a simple REST API for predicting housing prices.  
+The `/predict` endpoint accepts JSON input, scales the data using `StandardScaler`, loads a pre-trained scikit-learn regression model, and returns predictions in JSON format.  
+It defines a makefile that automates installation, linting, testing, deployment, and sample POST requests.  
+Continuous Integration runs through GitHub Actions, which installs dependencies, runs pylint and pytest on every push or pull request on the main branch.  
+Continuous Delivery is handled by Azure Pipelines, packaging the application and deploying it to an Azure Web App.  
+This structure enables fast development, automated quality checks, and seamless deployment to the cloud.
+
 
 ## Project Plan
 <TODO: Project Plan
