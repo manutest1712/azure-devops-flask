@@ -2,7 +2,8 @@
 
 This project provides a cloud-hosted Flask web application that predicts housing prices using a trained machine-learning model.  
 Users can send property details to the `/predict` API and instantly receive price predictions in JSON format.  
-Automation is built in: a Makefile simplifies setup, testing, and deployment, while GitHub Actions runs code quality checks on every update.  
+Automation is built in: a Makefile simplifies setup, testing, and deployment.
+Continuous Integration runs through GitHub Actions, which installs dependencies, runs pylint for code analysis and pytest to execute unit test cases on every push to the main branch.
 Azure Pipelines provides continuous delivery by packaging the application and deploying it directly to an Azure Web App.  
 The result is a reliable, scalable, and automated solution that supports rapid development and real-time model inference.
 
