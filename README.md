@@ -8,10 +8,11 @@ Azure Pipelines provides continuous delivery by packaging the application and de
 The result is a reliable, scalable, and automated solution that supports rapid development and real-time model inference.
 
 ## Project Plan
+
 <TODO: Project Plan
 
 * A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+![Project Plan In Excel](https://docs.google.com/spreadsheets/d/1QsJpxNEZldNpzWKBwi_6Fmf42sGRiEYL/edit?usp=sharing&ouid=109875377807326084890&rtpof=true&sd=true)
 
 ## Instructions
 
