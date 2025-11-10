@@ -54,7 +54,7 @@ Copy the entire output (one long line starting with `ssh-rsa`).
 7. Click **Add SSH key**. You may be asked to confirm your GitHub password or 2FA if enabled.
 
 
-### 5. Clone the repository (SSH)
+#### 5. Clone the repository (SSH)
 Now clone the repository using the SSH URL: git@github.com:manutest1712/azure-devops-flask.git
 
 ```bash
@@ -67,7 +67,7 @@ This will create a new directory `azure-devops-flask` in your Cloud Shell home d
 cd azure-devops-flask
 dir
 ```
-
+#### Screenshot
 ![alt text](docs/images/Azure_Cloud_Shell_Project_Clone.png?raw=true)
 
 
