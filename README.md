@@ -12,7 +12,6 @@ The result is a reliable, scalable, and automated solution that supports rapid d
 [Trello board for the Housing Trend Project Planner](https://trello.com/invite/b/690f05db22262841d76ee7eb/ATTIae68ef4c002ae520093e7c908e38d715DBC9BB5E/fask-housing-trend-weekly-plan)
 
 [Project Plan In Excel](https://docs.google.com/spreadsheets/d/1QsJpxNEZldNpzWKBwi_6Fmf42sGRiEYL/edit?usp=sharing&ouid=109875377807326084890&rtpof=true&sd=true)
-  https://docs.google.com/spreadsheets/d/1QsJpxNEZldNpzWKBwi_6Fmf42sGRiEYL/edit?usp=sharing&ouid=109875377807326084890&rtpof=true&sd=true
 
 ## Instructions
 
