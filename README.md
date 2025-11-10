@@ -78,34 +78,39 @@ make all
 ```
 
 #### Screenshot
+Below is an example of a successful test run:
+
 ![alt text](docs/images/Azure_Cloud_Shell_Make_All_Pass.png?raw=true)
 
-### Run the App from Cloud Shell
+### Run the Application from Azure Cloud Shell
 
-#### 1. Run the application
-You can run the application directly from Azure Cloud Shell using:
+#### 1. Deploy and Run the Web Application
+You can deploy and start the Flask application directly from Azure Cloud Shell using:
 
 ```bash
 make app-run
 ```
-This will start the flaskwebapp123456 web application. The above command will delete flaskwebapp123456 if it already exists.
-
-After completion, you will see output indicating deployment success and a URL like:
+This command deploys the application to Azure App Service using the name flaskwebapp123456
+If an app with the same name already exists, it will automatically be deleted before redeployment
+After deployment, you will see a URL similar to:
 
   https://flaskwebapp123456.azurewebsites.net
 
-Copy this link and open it in your browser.
+Open this link in your browser to view the running Flask application.
 
 #### 2. View the Application in Azure Portal
+To verify deployment or manage the web app:
 
-Steps to view:
 1. Log in to https://portal.azure.com
-2. Search for App Services in the search bar
-3. Click App Services
-4. You will see your deployed application named: flaskwebapp123456
-5. Click the application name to open the dashboard
+2. Search for **App Services** in the search bar
+3. Click **App Services**
+4. Locate the application named **flaskwebapp123456**
+5. Click the name to open the app dashboard
+6. Click Browse to open the URL directly from the portal
 
 #### Screenshot
+Below is an example of a successful deployment output in cloudshell:
+
 ![alt text](docs/images/Azure_Cloud_Shell_Make_All_Pass.png?raw=true)
 
 
