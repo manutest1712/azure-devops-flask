@@ -65,7 +65,7 @@ This will create a new directory `azure-devops-flask` in your Cloud Shell home d
 
 ```bash
 cd azure-devops-flask
-ls -la
+dir
 ```
 
 ![alt text](docs/images/Azure_Cloud_Shell_Project_Clone.png?raw=true)
