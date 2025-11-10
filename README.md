@@ -111,7 +111,7 @@ To verify deployment or manage the web app:
 #### Screenshot
 Below is an example of a successful deployment output in cloudshell:
 
-![alt text](docs/images/Azure_Cloud_Shell_Make_All_Pass.png?raw=true)
+![alt text](docs/images/Azure_Cloud_Shell_App_Deployment.png?raw=true)
 
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
