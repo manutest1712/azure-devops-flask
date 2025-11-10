@@ -21,7 +21,7 @@ LOG.setLevel(logging.INFO)
 def scale(payload):
     """Scales the incoming payload using StandardScaler."""
 
-    LOG.info("Scaling Payload: %s payload")
+    LOG.info("Scaling Payload: %s payload", payload)
     scaler = StandardScaler().fit(payload)
     scaled_adhoc_predict = scaler.transform(payload)
     return scaled_adhoc_predict
@@ -51,10 +51,10 @@ def predict():
         return jsonify({"error": "Model load failed"}), 500
 
     json_payload = request.json
-    LOG.info("JSON payload: %s json_payload")
+    LOG.info("JSON payload: %s json_payload", json_payload)
     try:
         inference_payload = pd.DataFrame(json_payload)
-        LOG.info("inference payload DataFrame: %s inference_payload")
+        LOG.info("inference payload DataFrame: %s inference_payload", inference_payload)
         scaled_payload = scale(inference_payload)
         prediction = list(clf.predict(scaled_payload))
         return jsonify({'prediction': prediction})
