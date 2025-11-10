@@ -19,6 +19,59 @@ The result is a reliable, scalable, and automated solution that supports rapid d
 
   ![Architecture](docs/images/Architecture.png?raw=true)
 
+### Clone Project in Azur Cloud Shell (SSH) — Step-by-step Guide
+
+#### 1. Open Azure Cloud Shell (Bash)
+  1. Open https://shell.azure.com/ in your browser (or open Cloud Shell from the Azure Portal via the top-right Cloud Shell icon).
+  2. Make sure Bash is selected (not PowerShell).
+
+#### 2. Generate an SSH keypair
+Run the following command in Azure Cloud Shell:
+
+```bash
+ssh-keygen -t rsa"
+```
+- When prompted for file in which to save the key, press Enter to accept the default (usually `/home/<username>/.ssh/id_rsa`).
+- When prompted for a passphrase, press Enter to use no passphrase.
+
+#### 3. Copy the public key
+Print the public key so you can copy it to GitHub:
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+Copy the entire output (one long line starting with `ssh-rsa`).
+
+#### 4. Add the SSH public key to GitHub
+
+1. Open GitHub in your browser and sign in: https://github.com/
+2. Click your profile picture (top-right) → **Settings**.
+3. In the left-hand menu click **SSH and GPG keys**.
+4. Click **New SSH key** (or **Add SSH key**).
+5. In **Title** enter a friendly name like `Azure Cloud Shell - <date>`.
+6. Paste the contents of `~/.ssh/id_rsa.pub` into the **Key** field.
+7. Click **Add SSH key**. You may be asked to confirm your GitHub password or 2FA if enabled.
+
+
+### 5. Clone the repository (SSH)
+Now clone the repository using the SSH URL (example you provided):
+
+```bash
+git clone git@github.com:manutest1712/azure-devops-flask.git
+```
+
+This will create a new directory `azure-devops-flask` in your Cloud Shell home directory. Change into the directory and list files:
+
+```bash
+cd azure-devops-flask
+ls -la
+```
+
+![alt text](docs/images/Azure_Cloud_Shell_Project_Clone.png?raw=true)
+
+
+
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
 * Project running on Azure App Service
@@ -41,6 +94,8 @@ udacity@Azure:~$ ./make_predict_azure_app.sh
 Port: 443
 {"prediction":[20.35373177134412]}
 ```
+
+
 
 * Output of streamed log files from deployed application
 
