@@ -71,6 +71,7 @@ dir
 ![alt text](docs/images/Azure_Cloud_Shell_Project_Clone.png?raw=true)
 
 ### Exute the unit tests from cloud shell
+The unit test cases can be executed for the application from cloud shell by running the following command
 
 ```bash
 make all
