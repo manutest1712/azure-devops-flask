@@ -70,7 +70,14 @@ dir
 #### Screenshot
 ![alt text](docs/images/Azure_Cloud_Shell_Project_Clone.png?raw=true)
 
+### Exute the unit tests from cloud shell
 
+```bash
+make all
+```
+
+#### Screenshot
+![alt text](docs/images/Azure_Cloud_Shell_Make_All_Pass.png?raw=true)
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
