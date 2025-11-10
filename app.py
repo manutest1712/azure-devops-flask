@@ -43,8 +43,8 @@ def predict():
         # clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
         # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
         clf = joblib.load("./Housing_price_model/LinearRegression.joblib.joblib")
-    except FileNotFoundError:
-        LOG.error("Model file not found")
+    except FileNotFoundError as e:
+        LOG.error("Model file not found: %s", e)
         return jsonify({"error": "Model file not found"}), 500
     except (ImportError, AttributeError) as e:
         LOG.error("Model load failed: %s", e)
