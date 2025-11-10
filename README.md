@@ -80,6 +80,35 @@ make all
 #### Screenshot
 ![alt text](docs/images/Azure_Cloud_Shell_Make_All_Pass.png?raw=true)
 
+### Run the App from Cloud Shell
+
+#### 1. Run the application
+You can run the application directly from Azure Cloud Shell using:
+
+```bash
+make app-run
+```
+This will start the flaskwebapp123456 web application. The above command will delete flaskwebapp123456 if it already exists.
+
+After completion, you will see output indicating deployment success and a URL like:
+
+  https://flaskwebapp123456.azurewebsites.net
+
+Copy this link and open it in your browser.
+
+#### 2. View the Application in Azure Portal
+
+Steps to view:
+1. Log in to https://portal.azure.com
+2. Search for App Services in the search bar
+3. Click App Services
+4. You will see your deployed application named: flaskwebapp123456
+5. Click the application name to open the dashboard
+
+#### Screenshot
+![alt text](docs/images/Azure_Cloud_Shell_Make_All_Pass.png?raw=true)
+
+
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
 * Project running on Azure App Service
