@@ -29,7 +29,7 @@ The result is a reliable, scalable, and automated solution that supports rapid d
 Run the following command in Azure Cloud Shell:
 
 ```bash
-ssh-keygen -t rsa"
+ssh-keygen -t rsa
 ```
 - When prompted for file in which to save the key, press Enter to accept the default (usually `/home/<username>/.ssh/id_rsa`).
 - When prompted for a passphrase, press Enter to use no passphrase.
