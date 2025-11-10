@@ -55,7 +55,7 @@ Copy the entire output (one long line starting with `ssh-rsa`).
 
 
 ### 5. Clone the repository (SSH)
-Now clone the repository using the SSH URL (example you provided):
+Now clone the repository using the SSH URL: git@github.com:manutest1712/azure-devops-flask.git
 
 ```bash
 git clone git@github.com:manutest1712/azure-devops-flask.git
