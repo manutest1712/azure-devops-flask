@@ -108,10 +108,57 @@ To verify deployment or manage the web app:
 5. Click the name to open the app dashboard
 6. Click Browse to open the URL directly from the portal
 
-#### Screenshot
+##### Screenshot
 Below is an example of a successful deployment output in cloudshell:
 
 ![alt text](docs/images/Azure_Cloud_Shell_App_Deployment.png?raw=true)
+
+#### 3. Test the Prediction API Using POST
+To test the /predict endpoint, run:
+```bash
+make web-app-run-post
+```
+This executes the script:
+
+```bash
+#!/usr/bin/env bash
+curl -d '{
+   "CHAS":{"0":0},
+   "RM":{"0":6.575},
+   "TAX":{"0":296.0},
+   "PTRATIO":{"0":15.3},
+   "B":{"0":396.9},
+   "LSTAT":{"0":4.98}
+}' \
+-H "Content-Type: application/json" \
+-X POST https://flaskwebapp123456.azurewebsites.net/predict
+```
+
+Sample output:
+```bash
+{"prediction":[20.35373177134412]}
+```
+
+##### Screenshot
+Below is an example of a successful post command output in cloudshell:
+
+![alt text](docs/images/Azure_Cloud_Shell_App_Post.png?raw=true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
