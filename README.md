@@ -144,6 +144,28 @@ Below is an example of a successful post command output in cloudshell:
 
 ![alt text](docs/images/Azure_Cloud_Shell_App_Post.png?raw=true)
 
+#### 3. Check the log files
+
+##### From cloud shell
+Run the following command to stream logs from your deployed Flask application:
+
+```bash
+az webapp log tail --resource-group AzureDevops --name flaskwebapp123456
+```
+This displays real-time application output such as prints, logging statements, and errors.
+
+##### Using Azure Portal – Log Stream
+
+1. Log in to the **Azure Portal**
+2. Go to **App Services**
+3. Select your Flask application
+4. On the left menu → Click **Log Stream**
+
+This shows live application logs directly inside the Azure Portal.
+
+##### Screenshot
+Below is an example showing application logs after executing a POST request (visible both in Cloud Shell and Log Stream):
+![alt text](docs/images/Azure_Cloud_Shell_App_Run.png?raw=true)
 
 
 
