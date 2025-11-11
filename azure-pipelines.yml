@@ -22,10 +22,6 @@ stages:
       steps:
         - script: |
             echo Building...
-            python3 -m venv venv
-            source venv/bin/activate
-            pip install --upgrade pip setuptools wheel
-            pip install -r requirements.txt
           workingDirectory: $(projectRoot)
           displayName: 'Setting up the build process' 
         - task: ArchiveFiles@2
@@ -64,4 +60,4 @@ stages:
                 azureSubscription: $(azureServiceConnectionId)
                 appName: $(webAppName)
                 package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-                appType: webApp
+                appType: webAppLinux
