@@ -50,6 +50,7 @@ def predict():
         LOG.error("Model load failed: %s", e)
         return jsonify({"error": "Model load failed"}), 500
 
+    
     json_payload = request.json
     LOG.info("JSON payload: %s json_payload", json_payload)
     try:
