@@ -193,80 +193,34 @@ Azure Web App keeps a full deployment history showing when each deployment happe
 Deployment history from Azure Web App Activity Log
 ![alt text](docs/images/Azure_App_Activity_Log.png?raw=true)
 
-
-
-
-
-
-
-
-
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
-* Project running on Azure App Service
-
-* Project cloned into Azure Cloud Shell
-
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-
-* Output of a test run
-
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
-
-* Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
-
-
-
-* Output of streamed log files from deployed application
-
-> 
-
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+### 1. Working GitHub Actions YAML
+
+A corrected workflow is required because current dependency versions cause build failures.
+The updated YAML should:
+  1. Create virtual environment
+  2. Install compatible packages
+  3. Run tests with pytest
+
+
+### 2. Working Azure DevOps Pipeline YAML
+
+The existing pipeline deploys successfully, but the app does not start on Azure Web App due to package and startup issues.
+The revised YAML must:
+
+1. Install compatible dependencies
+2. Deploy to Linux Web App
+3. Install packagaes and start the app with Gunicorn 
+  startUpCommand: 'pip install -r requirements.txt && gunicorn --bind 0.0.0.0:8000 app:app'
 
 ## Demo 
+A full walkthrough of the project — including application deployment, CI and CD pipelines — is available on YouTube.
 
-<TODO: Add link Screencast on YouTube>
-
-
-
-
-
-# Flask Hello World
-
-Minimal Flask application that returns "Hello, World!" at `/` and a JSON healthcheck at `/health`.
+![alt text](https://www.youtube.com/watch?v=-CAc0OwIkv4)?raw=true)
+[![Watch the demo](https://img.youtube.com/vi/-CAc0OwIkv4/0.jpg)](https://www.youtube.com/watch?v=-CAc0OwIkv4)
 
 
-## Requirements
-- Python 3.8+ (3.12 works fine)
-- make
-
-
-## Quick start (Unix/macOS)
-
-# clone the repo
-git clone <your-repo-url>
-cd azure-devops-flask
-
-
-# Install necessary dependencies
-make install
-
-
-# run the app (development)
-make run
-
-# open http://127.0.0.1:5000 in your browser
 
 
 ![alt text](docs/images/Azure_Cloud_Shell_Make_All_Pass.png?raw=true)
