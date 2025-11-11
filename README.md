@@ -167,13 +167,31 @@ This shows live application logs directly inside the Azure Portal.
 Below is an example showing application logs after executing a POST request (visible both in Cloud Shell and Log Stream):
 ![alt text](docs/images/Azure_Cloud_Shell_App_Run.png?raw=true)
 
+## CI CD Badges and Pipeline Status
 
+### GitHub Actions – CI Build Workflow
+This repository includes a GitHub Actions workflow that builds and validates the application on every commit or pull request.
 
+##### Screenshots
+List of CI pipeline runs
+![alt text](docs/images/Github_Badge_List.png?raw=true)
 
+Example of a successful CI pipeline execution
+![alt text](docs/images/Github_Actions_Badge.png?raw=true)
 
+### Azure Pipelines – Build & Deployment Workflow
+Azure DevOps pipeline handles continuous deployment by packaging the app and publishing to Azure Web App.
 
+##### Screenshot
+List of CD pipeline executions
+![alt text](docs/images/Azure_Pipeline_Badge_List.png?raw=true)
 
+### Application Deployment History
+Azure Web App keeps a full deployment history showing when each deployment happened and whether it was successful.
 
+##### Screenshot
+Deployment history from Azure Web App Activity Log
+![alt text](docs/images/Azure_App_Activity_Log.png?raw=true)
 
 
 
