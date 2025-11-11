@@ -217,7 +217,6 @@ The revised YAML must:
 ## Demo 
 A full walkthrough of the project — including application deployment, CI and CD pipelines — is available on YouTube.
 
-![alt text](https://www.youtube.com/watch?v=-CAc0OwIkv4)?raw=true)
 [![Watch the demo](https://img.youtube.com/vi/-CAc0OwIkv4/0.jpg)](https://www.youtube.com/watch?v=-CAc0OwIkv4)
 
 
