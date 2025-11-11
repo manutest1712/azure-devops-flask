@@ -182,9 +182,12 @@ Example of a successful CI pipeline execution
 ### Azure Pipelines – Build & Deployment Workflow
 Azure DevOps pipeline handles continuous deployment by packaging the app and publishing to Azure Web App.
 
-##### Screenshot
+##### Screenshots
 List of CD pipeline executions
-![alt text](docs/images/Azure_Pipeline_Badge_List.png?raw=true)
+![alt text](docs/images/Azure_Pipeline_App_Run.png?raw=true)
+
+Example of a successful CD pipeline execution
+![alt text](docs/images/Github_Actions_Badge.png?raw=true)
 
 ### Application Deployment History
 Azure Web App keeps a full deployment history showing when each deployment happened and whether it was successful.
@@ -192,6 +195,7 @@ Azure Web App keeps a full deployment history showing when each deployment happe
 ##### Screenshot
 Deployment history from Azure Web App Activity Log
 ![alt text](docs/images/Azure_App_Activity_Log.png?raw=true)
+
 
 ## Enhancements
 
