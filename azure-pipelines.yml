@@ -22,7 +22,6 @@ stages:
       steps:
         - script: |
             echo Building...
-            pip install --user -r requirements.txt
           workingDirectory: $(projectRoot)
           displayName: 'Setting up the build process' 
         - task: ArchiveFiles@2
