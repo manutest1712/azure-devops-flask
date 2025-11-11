@@ -184,10 +184,10 @@ Azure DevOps pipeline handles continuous deployment by packaging the app and pub
 
 ##### Screenshots
 List of CD pipeline executions
-![alt text](docs/images/Azure_Pipeline_App_Run.png?raw=true)
+![alt text](docs/images/Azure_Pipeline_Badge_List.png?raw=true)
 
 Example of a successful CD pipeline execution
-![alt text](docs/images/Github_Actions_Badge.png?raw=true)
+![alt text](docs/images/Azure_Pipeline_App_Run.png?raw=true)
 
 ### Application Deployment History
 Azure Web App keeps a full deployment history showing when each deployment happened and whether it was successful.
