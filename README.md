@@ -172,6 +172,9 @@ Below is an example showing application logs after executing a POST request (vis
 ### GitHub Actions – CI Build Workflow
 This repository includes a GitHub Actions workflow that builds and validates the application on every commit or pull request.
 
+##### CI Pipeline Badge
+[![CI](https://github.com/manutest1712/azure-devops-flask/actions/workflows/main.yml/badge.svg)](https://github.com/manutest1712/azure-devops-flask/actions/workflows/main.yml)
+
 ##### Screenshots
 List of CI pipeline runs
 ![alt text](docs/images/Github_Badge_List.png?raw=true)
