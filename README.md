@@ -223,4 +223,3 @@ A full walkthrough of the project — including application deployment, CI and C
 
 [![Watch the demo](https://img.youtube.com/vi/-CAc0OwIkv4/0.jpg)](https://www.youtube.com/watch?v=-CAc0OwIkv4)
 
-
